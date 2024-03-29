@@ -1,0 +1,158 @@
+/* IMPOSTAZIONI GENERALI */
+
+
+.title{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold ;
+    color: #25a2c3 ;
+    line-height: 1.5;
+    
+}
+
+body{
+    font-family: "Open Sans", sans-serif;
+    color: #393d41;
+    font-size: 1.2rem;
+    line-height: 1.65;
+    text-align: center;
+    align-items: center;
+}
+/* HEADER */
+
+
+header{
+    background-color: black;
+    height: 100px;
+    align-content: center;
+    align-items: center;
+}
+
+#logo{
+    justify-content: center center;
+    height: 50%;
+    width: min-content;
+}
+
+/* MAIN */
+
+#alto{
+    background-image: url(../images/banner.jpg);
+    background-size: cover;
+    height: 350px;
+}
+
+.big{
+    font-size: 2rem;
+    padding:30px;
+}
+
+#uno{
+    padding: 0 30px 30px;
+    
+}
+
+#pulsante{
+    background-color:#f04c2f ;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 15px;
+    margin: 10px;
+    font-size: small;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.interlinea{
+    margin:20px;
+}
+
+/* ARTICLE */
+
+#notebook{
+    border-radius: 600px;
+    align-items: center;
+    width: 350px;
+}
+
+.content{
+    padding: 20px 20px;
+
+}
+
+/* SECTION */
+
+section{
+    font-style: italic;
+    background-color: #e22d0e;
+    color: white;
+    
+}
+
+section p{
+    font-size:0.8em;
+    padding: 10px 80px 20px;
+}
+
+#garanzia{
+    color: white;
+    padding: 20px 40px 0;
+    font-size: 1.5em;
+}
+
+/* CONTENITORI IMMAGINE + TITOLO + PARAGRAFO */
+
+.container{
+    border:1px solid #dee1e3 ;
+    margin:50px 30px;
+    padding:0;
+    text-align: center;
+    
+}
+
+.paragrafo{
+    padding-bottom: 30px;
+}
+
+.img{ 
+    width:100%;
+    margin:0
+}
+
+/* CONTATTI*/
+
+#contatti{
+    background-color: #25a2c3;
+    color: #c8e7f0;
+}
+
+address a{
+    font-size:0.8em;
+    padding: 10px 50px 0px;
+    display: block;
+}
+
+#ultimo{
+    color: white;
+    padding: 20px 40px 0;
+    font-size: 1.5em;
+}
+
+footer{
+    border-top:1px solid #c8e7f0;
+    margin:20px 150px 0;
+    font-size: small;
+    padding:10px 0;
+}
+
+/* FOOTER */
+
+address a{
+    color:#c8e7f0;
+}
+
+footer a{
+    color:#c8e7f0;
+}
+
