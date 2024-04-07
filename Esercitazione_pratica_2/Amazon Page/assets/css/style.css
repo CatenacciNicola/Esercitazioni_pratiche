@@ -1,0 +1,126 @@
+/* Your styles here */
+
+/*IMPAGINAZIONE E CARATTERISTICHE GENERALI*/
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #e9edee;
+}
+
+main, footer{
+    text-align: center;
+}
+
+.margine{
+    margin:1.5rem
+}
+
+a{
+    text-decoration: none;
+}
+
+/*HEADER*/
+
+.logo{                                              /*VALIDO ANCHE PER LOGO NEL FOOTER*/
+    background-color: #222f3f;
+}
+
+#logo1{
+    width:8%;
+    padding:1%;
+}
+
+.collegamenti{                                      /*VALIDO ANCHE PER LINK NEL FOOTER*/
+    background-color: #364759;
+    font-size: 0.8em;
+    padding:1vh;
+}
+
+.bianco{                                            /*CARATTERISTICHE VALIDE PER IL TESTO BIANCO IN TUTTA LA PAGINA*/
+    color: white;
+    padding: 1%;
+}
+
+/*MAIN*/
+
+
+#arancio{
+    background-color: #f56600;
+    font-size: 0.8em;
+}
+
+/*ARTICLE*/
+
+article{
+    background-image:url(../images/bg-image.png);    /*IMMAGINE DI SFONDO*/
+    color: white;
+    background-size: repeat;
+    font-weight: bold;
+    padding:5vh;
+}
+
+article:hover{                                      /*CAMBIAMENTO DI SFONDO E COLORE DEL TESTO AL PASSAGGIO DEL PUNTATORE*/
+    background-image: url(../images/bg-img.png);
+    color:black;
+}
+
+h1{
+    font-size: 1.5em;
+    padding-bottom: 2vh;
+}
+
+/*SECTION CENTRALE CON 4 IMMAGINI AFFIANCATE*/
+
+#sezionecentrale{
+    background-color: white;
+    padding-bottom: 28vw;
+    text-align: left;
+}
+
+h2{
+    padding:2vh 3vh 0;
+    font-weight:bold;
+    font-size:1em;
+}
+
+h2 a{                                               /*VALIDO ANCHE PER I LINK SOTTO LE IMMAGINI SUCCESSIVE*/
+    font-size: 0.8em;
+    padding-left: 1em;
+    color: #166b7e;
+}
+
+.allinea{
+    float: left;
+    width:22%;
+    height:25vw;
+    margin: 1.5%;
+}
+
+.allineamento{
+    width:100%;
+    height: 100%;
+    border-radius: 7px;
+    object-fit: cover;
+    box-shadow:5px 5px 10px #b8c3c6;
+}
+
+/*PARTE FINALE DEL MAIN*/
+
+.immagine{
+    width:100%;
+}
+
+img+h2{
+    padding-top: 1px;
+}
+
+a[href^="#"]{                                       /*FORMATTAZIONE VALIDA PER TUTTE LE EVENTUALI ANCORE INTERNE*/
+    text-decoration:underline;
+}
+
+/*FOOTER*/
+
+#logo2{
+    width:10%;
+    padding:5%;
+}
