@@ -1,0 +1,18 @@
+nav {
+  background-color: black;
+}
+nav .navbar-toggler {
+  background-color: rgba(255, 255, 255, 0.611);
+  border: 1px solid rgba(255, 255, 255, 0.736);
+}
+nav li :hover {
+  color: rgb(255, 255, 255) !important;
+  font-weight: 600;
+}
+nav li :active {
+  color: rgb(255, 255, 255) !important;
+  font-weight: 600;
+}
+nav .nav-link {
+  color: rgb(255, 255, 255);
+}/*# sourceMappingURL=style-navbar.css.map */
