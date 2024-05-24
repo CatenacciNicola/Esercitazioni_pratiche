@@ -1,25 +1,27 @@
-<h1 class="text-center">Scegli uno dei nostri migliori Band!</h1>
+<h1 class="text-center my-4">Scegli uno dei nostri migliori viaggi!</h1>
 <div class="row justify-content-center" *ngIf="carArr.length > 0">
   <div class="col text-center" [routerLink]="['/brand', carArr[0].brand]">
-    <img [src]="[carArr[0].brandLogo]" />
+    <img class="img-fluid rounded-circle" [src]="[carArr[0].brandLogo]" />
   </div>
   <div class="col text-center" [routerLink]="['/brand', carArr[2].brand]">
-    <img [src]="[carArr[2].brandLogo]" />
+    <img class="img-fluid rounded-circle" [src]="[carArr[2].brandLogo]" />
   </div>
   <div class="col text-center" [routerLink]="['/brand', carArr[4].brand]">
-    <img [src]="[carArr[4].brandLogo]" />
+    <img class="img-fluid rounded-circle" [src]="[carArr[4].brandLogo]" />
   </div>
 </div>
 
-<h3 class="my-3 text-center">I più visti sul sito</h3>
+<h3 class="mt-5 mb-4 text-center">I più visti sul sito</h3>
 <div class="row mb-5 g-3 justify-content-around">
   <div class="col-12 col-md-4" *ngFor="let c of randomCars">
-    <div class="card">
+    <div class="card h-100 mb-5">
       <img [src]="[c.modelImage]" class="card-img-top" alt="..." />
 
-      <div class="card-body">
-        <h5 class="card-title">{{ c.model }}</h5>
-        <p class="card-text">{{ c.price }}</p>
+      <div class="card-body d-flex flex-column justify-content-between">
+        <div>
+          <h5 class="card-title">{{ c.model }}</h5>
+          <p class="card-text">{{ c.price }}</p>
+        </div>
         <div class="d-flex justify-content-between align-content-center">
           <a class="btn btn-dark" [routerLink]="['/brand', c.brand]">{{
             c.brand

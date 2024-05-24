@@ -1,27 +1,36 @@
-<footer class="bg-body-tertiary fixed-bottom">
-  <div class="container text-center" *ngIf="carArr.length > 4">
-    <a
-      class="me-4 text-black text-decoration-none"
-      routerLink="/"
-      routerLinkActive="active"
-      >Home</a
-    >
-    <a
-      class="me-4 text-black text-decoration-none"
-      [routerLink]="['/brand', carArr[0].brand]"
-      routerLinkActive="active"
-      >{{ carArr[0].brand }}</a
-    >
-    <a
-      class="me-4 text-black text-decoration-none"
-      [routerLink]="['/brand', carArr[2].brand]"
-      >{{ carArr[2].brand }}</a
-    >
-    <a
-      class="me-4 text-black text-decoration-none"
-      [routerLink]="['/brand', carArr[4].brand]"
-      routerLinkActive="active"
-      >{{ carArr[4].brand }}</a
-    >
+<footer class="bg-success fixed-bottom">
+  <div class="row text-center" *ngIf="carArr.length > 4">
+    <div class="col">
+      <a
+        class="me-4 text-black text-decoration-none"
+        routerLink="/"
+        routerLinkActive="active"
+        >Home</a
+      >
+      <a
+        class="me-4 text-black text-decoration-none"
+        [routerLink]="['/brand', carArr[0].brand]"
+        routerLinkActive="active"
+        >{{ carArr[0].brand }}</a
+      >
+      <a
+        class="me-4 text-black text-decoration-none"
+        [routerLink]="['/brand', carArr[2].brand]"
+        >{{ carArr[2].brand }}</a
+      >
+      <a
+        class="me-4 text-black text-decoration-none"
+        [routerLink]="['/brand', carArr[4].brand]"
+        routerLinkActive="active"
+        >{{ carArr[4].brand }}</a
+      >
+    </div>
+  </div>
+  <div class="col d-flex justify-content-around">
+    <a class="me-4 text-black text-decoration-none" href="#">Contattaci</a>
+
+    <a class="me-4 text-black text-decoration-none" href="#">Chi siamo</a>
+    <a class="me-4 text-black text-decoration-none" href="#">Lavora con noi</a>
+    <a class="me-4 text-black text-decoration-none" href="#">Assistenza</a>
   </div>
 </footer>
