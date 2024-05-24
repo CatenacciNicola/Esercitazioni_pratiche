@@ -1,0 +1,26 @@
+<h2 class="text-center my-5" *ngIf="brandCar.length > 0">
+  {{ brandCar[0].brand }}
+</h2>
+
+<div class="row mb-5 g-3 justify-content-around">
+  <div class="col-12 col-md-4" *ngFor="let c of brandCar">
+    <div class="card">
+      <img [src]="[c.modelImage]" class="card-img-top" alt="..." />
+
+      <div class="card-body">
+        <h5 class="card-title">{{ c.model }}</h5>
+        <p class="card-text">{{ c.price }}</p>
+        <p
+          class="fw-bold"
+          [ngClass]="{
+            'text-success': c.available,
+            'text-danger': !c.available
+          }"
+          [innerText]="disponibile(c)"
+        >
+          Auto
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

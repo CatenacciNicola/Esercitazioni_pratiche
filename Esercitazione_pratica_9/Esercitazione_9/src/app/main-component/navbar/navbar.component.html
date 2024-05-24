@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+
+    <!--BOTTONE-->
+
+    <button
+      (click)="show = !show"
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!--MENU A SCOMPARSA-->
+
+    <div class="collapse navbar-collapse" [ngClass]="{ show: show }">
+      <div class="navbar-nav" *ngIf="carArr.length > 0">
+        <a class="nav-link" routerLink="/" routerLinkActive="active">Home</a>
+        <a
+          class="nav-link"
+          [routerLink]="['/brand', carArr[0].brand]"
+          routerLinkActive="active"
+          >{{ carArr[0].brand }}</a
+        >
+        <a
+          class="nav-link"
+          [routerLink]="['/brand', carArr[2].brand]"
+          routerLinkActive="active"
+          >{{ carArr[2].brand }}</a
+        >
+        <a
+          class="nav-link"
+          [routerLink]="['/brand', carArr[4].brand]"
+          routerLinkActive="active"
+          >{{ carArr[4].brand }}</a
+        >
+      </div>
+    </div>
+  </div>
+</nav>

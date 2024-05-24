@@ -1,0 +1,41 @@
+<div class="row text-center my-5 h5 text-black" *ngIf="carArr.length > 0">
+  <div class="col-12 mb-5">
+    <h2>
+      Mi dispiace, la pagina che cerchi non esiste.. Forse cercavi questo?
+    </h2>
+  </div>
+  <div class="col-12 mb-4">
+    <a
+      class="text-decoration-none text-black"
+      routerLink="/"
+      routerLinkActive="active"
+      >Home</a
+    >
+  </div>
+  <div class="col-12 col-md-4">
+    <a
+      class="text-decoration-none text-black"
+      [routerLink]="['/brand', carArr[0].brand]"
+      routerLinkActive="active"
+      >{{ carArr[0].brand }}</a
+    >
+  </div>
+
+  <div class="col-12 col-md-4">
+    <a
+      class="text-decoration-none text-black"
+      [routerLink]="['/brand', carArr[2].brand]"
+      routerLinkActive="active"
+      >{{ carArr[2].brand }}</a
+    >
+  </div>
+
+  <div class="col-12 col-md-4">
+    <a
+      class="text-decoration-none text-black"
+      [routerLink]="['/brand', carArr[4].brand]"
+      routerLinkActive="active"
+      >{{ carArr[4].brand }}</a
+    >
+  </div>
+</div>

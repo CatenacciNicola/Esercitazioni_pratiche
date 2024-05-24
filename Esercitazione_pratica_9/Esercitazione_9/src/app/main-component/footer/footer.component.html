@@ -1,0 +1,27 @@
+<footer class="bg-body-tertiary fixed-bottom">
+  <div class="container text-center" *ngIf="carArr.length > 4">
+    <a
+      class="me-4 text-black text-decoration-none"
+      routerLink="/"
+      routerLinkActive="active"
+      >Home</a
+    >
+    <a
+      class="me-4 text-black text-decoration-none"
+      [routerLink]="['/brand', carArr[0].brand]"
+      routerLinkActive="active"
+      >{{ carArr[0].brand }}</a
+    >
+    <a
+      class="me-4 text-black text-decoration-none"
+      [routerLink]="['/brand', carArr[2].brand]"
+      >{{ carArr[2].brand }}</a
+    >
+    <a
+      class="me-4 text-black text-decoration-none"
+      [routerLink]="['/brand', carArr[4].brand]"
+      routerLinkActive="active"
+      >{{ carArr[4].brand }}</a
+    >
+  </div>
+</footer>

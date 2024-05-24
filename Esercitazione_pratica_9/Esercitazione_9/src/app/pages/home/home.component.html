@@ -1,0 +1,41 @@
+<h1 class="text-center">Scegli uno dei nostri migliori Band!</h1>
+<div class="row justify-content-center" *ngIf="carArr.length > 0">
+  <div class="col text-center" [routerLink]="['/brand', carArr[0].brand]">
+    <img [src]="[carArr[0].brandLogo]" />
+  </div>
+  <div class="col text-center" [routerLink]="['/brand', carArr[2].brand]">
+    <img [src]="[carArr[2].brandLogo]" />
+  </div>
+  <div class="col text-center" [routerLink]="['/brand', carArr[4].brand]">
+    <img [src]="[carArr[4].brandLogo]" />
+  </div>
+</div>
+
+<h3 class="my-3 text-center">I più visti sul sito</h3>
+<div class="row mb-5 g-3 justify-content-around">
+  <div class="col-12 col-md-4" *ngFor="let c of randomCars">
+    <div class="card">
+      <img [src]="[c.modelImage]" class="card-img-top" alt="..." />
+
+      <div class="card-body">
+        <h5 class="card-title">{{ c.model }}</h5>
+        <p class="card-text">{{ c.price }}</p>
+        <div class="d-flex justify-content-between align-content-center">
+          <a class="btn btn-dark" [routerLink]="['/brand', c.brand]">{{
+            c.brand
+          }}</a>
+          <p
+            class="m-0 fw-bold"
+            [ngClass]="{
+              'text-success': c.available,
+              'text-danger': !c.available
+            }"
+            [innerText]="disponibile(c)"
+          >
+            Auto
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
