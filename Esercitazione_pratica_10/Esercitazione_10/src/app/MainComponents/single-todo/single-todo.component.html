@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card-header">
+    {{ todo.completed ? "Completato" : "Non completato" }}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ todo.todo }}</h5>
+    <p class="card-text">
+      Assigned to:
+      {{ todo.user?.firstName }} {{ todo.user?.lastName }}
+    </p>
+    <input type="checkbox" [(ngModel)]="todo.completed" />
+  </div>
+</div>

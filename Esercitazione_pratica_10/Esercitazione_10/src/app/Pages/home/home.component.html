@@ -1,1 +1,7 @@
-<p>home works!</p>
+<div class="container">
+  <div class="row gy-2">
+    <div class="col-12" *ngFor="let t of todoConUser">
+      <app-single-todo [todo]="t"></app-single-todo>
+    </div>
+  </div>
+</div>

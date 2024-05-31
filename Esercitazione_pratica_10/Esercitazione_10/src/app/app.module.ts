@@ -8,6 +8,8 @@ import { HomeComponent } from './Pages/home/home.component';
 import { CompletedComponent } from './Pages/completed/completed.component';
 import { UsersComponent } from './Pages/users/users.component';
 import { Page404Component } from './Pages/page404/page404.component';
+import { SingleTodoComponent } from './MainComponents/single-todo/single-todo.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { Page404Component } from './Pages/page404/page404.component';
     HomeComponent,
     CompletedComponent,
     UsersComponent,
-    Page404Component
+    Page404Component,
+    SingleTodoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
