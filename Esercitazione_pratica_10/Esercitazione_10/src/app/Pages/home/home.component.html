@@ -1,4 +1,17 @@
 <div class="container">
+  <!--  Il form è commentato perchè non sono riuscita a passare il parametro come filtro perchè la funzione che popola la pagina viene lanciata all'avvio.
+  <form>
+    <label for="user">Cerca per utente</label>
+    <input
+      class="d-block my-3"
+      type="text"
+      placeholder="First Name"
+      name="user"
+      [(ngModel)]="user"
+    />
+    <button class="btn btn-success" (click)="cercaUser()">Cerca</button>    Il bottone è stato creato all'ultimo e non è stata creata la funzione data l'ora.
+  </form>
+  -->
   <div class="row gy-2">
     <div class="col-12" *ngFor="let t of todoConUser">
       <app-single-todo [todo]="t"></app-single-todo>

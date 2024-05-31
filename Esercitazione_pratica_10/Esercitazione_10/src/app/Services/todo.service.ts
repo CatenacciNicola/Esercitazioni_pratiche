@@ -910,13 +910,32 @@ export class TodoService {
     }
   ]
 
-  getTodoConUser(userArr: iUser[]): iTodo[] {
+ /*
+ getTodoConUser(userArr: iUser[],user?:string): iTodo[] {
     return this.toDo.map(t => {
       let user = userArr.find(u => u.id === t.userId)
       t.user = user
       return t
     })
   }
+  */
+
+  getTodoConUser(userArr: iUser[],user?:string): iTodo[] {
+    if(user){
+      return this.toDo.map(t => {
+        let user = userArr.find(u => u.id === t.userId)
+        t.user = user
+        return t
+      }).filter(t=>t.user && t.user.firstName===user)   //Se il parametro user viene passato controllo se iTodo ha la proprietà user (devo fare il controllo perchè essendo user facoltativa dava errore) e filtro per firstName=user
+    }
+    else{
+    return this.toDo.map(t => {
+      let user = userArr.find(u => u.id === t.userId)
+      t.user = user
+      return t
+    })}
+  }
+
 
   getTodoCompleted(userArr:iUser[]):iTodo[]{
     return this.toDo.map(t => {

@@ -13,6 +13,7 @@ export class HomeComponent {
   todoArr:iTodo[]=[]
   userArr:iUser[]=[]
   todoConUser:iTodo[]=[]
+  user:string=""
 
   constructor(
     private todoSvc:TodoService,
@@ -24,7 +25,8 @@ export class HomeComponent {
     this.todoArr=this.todoSvc.toDo
     this.userArr=this.userSvc.user
 
-    this.getTodoConUser(this.userArr)
+    this.getTodoConUser(this.userArr) //Ho rimosso user dai parametri non avendo completato la task
+
 
    /* this.todoConUser=this.todoArr.map(t=>{
     let user=this.userArr.find(u=>u.id==t.userId);
@@ -35,8 +37,8 @@ export class HomeComponent {
   console.log(this.todoConUser)*/
   }
 
-  getTodoConUser(userArr:iUser[]){
-      this.todoConUser=this.todoSvc.getTodoConUser(userArr)
+  getTodoConUser(userArr:iUser[],user?:string){
+      this.todoConUser=this.todoSvc.getTodoConUser(userArr) //Ho rimosso user dai parametri non avendo completato la task
     }
 
 }
