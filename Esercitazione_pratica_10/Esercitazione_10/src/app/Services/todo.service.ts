@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { iTodo } from '../Modules/itodo';
+import { iUser } from '../Modules/iuser';
 
 @Injectable({
   providedIn: 'root'
@@ -909,7 +910,21 @@ export class TodoService {
     }
   ]
 
+  getTodoConUser(userArr: iUser[]): iTodo[] {
+    return this.toDo.map(t => {
+      let user = userArr.find(u => u.id === t.userId)
+      t.user = user
+      return t
+    })
+  }
 
+  getTodoCompleted(userArr:iUser[]):iTodo[]{
+    return this.toDo.map(t => {
+      let user = userArr.find(u => u.id === t.userId)
+      t.user = user
+      return t
+    }).filter(todo=>todo.completed===true)
+  }
 
   constructor() { }
 }

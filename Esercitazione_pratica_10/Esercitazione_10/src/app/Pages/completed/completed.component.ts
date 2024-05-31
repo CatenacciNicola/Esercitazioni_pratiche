@@ -26,7 +26,9 @@ export class CompletedComponent {
     this.todoArr=this.todoSvc.toDo
     this.userArr=this.userSvc.user
 
-    this.todoConUser=this.todoArr.map(t=>{
+    this.getTodoCompleted(this.userArr)
+
+    /* this.todoConUser=this.todoArr.map(t=>{
     let user=this.userArr.find(u=>u.id==t.userId);
     t.user=user;
     return t
@@ -34,7 +36,12 @@ export class CompletedComponent {
 
   this.todoCompleted=this.todoConUser.filter(todo=>todo.completed===true)
 
-  console.log(this.todoCompleted)
+  console.log(this.todoCompleted) */
   }
+
+  getTodoCompleted(userArr:iUser[]){
+    this.todoCompleted=this.todoSvc.getTodoCompleted(userArr)
+  }
+
 }
 

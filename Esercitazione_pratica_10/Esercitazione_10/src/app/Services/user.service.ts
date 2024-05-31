@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { iUser } from '../Modules/iuser';
+import { iTodo } from '../Modules/itodo';
 
 @Injectable({
   providedIn: 'root'
@@ -809,7 +810,13 @@ export class UserService {
     }
   ]
 
-
+  getUserConTodo(todoArr:iTodo[]){
+    return this.user.map(u => {
+      let allTodo = todoArr.filter(t => t.userId === u.id);
+      u.Alltodo = allTodo;
+      return u;
+    })
+  }
 
   constructor() { }
 }

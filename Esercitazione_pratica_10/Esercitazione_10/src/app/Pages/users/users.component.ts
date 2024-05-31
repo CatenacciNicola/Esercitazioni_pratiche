@@ -24,12 +24,19 @@ export class UsersComponent {
     this.todoArr=this.todoSvc.toDo
     this.userArr=this.userSvc.user
 
-    this.userConTodo = this.userArr.map(u => {
+    this.getUserConTodo(this.todoArr)
+
+    /*this.userConTodo = this.userArr.map(u => {
       let allTodo = this.todoArr.filter(t => t.userId === u.id);
       u.Alltodo = allTodo;
       return u;
     });
 
-    console.log(this.userConTodo);
-}
+    console.log(this.userConTodo);*/
+  }
+
+  getUserConTodo(todoArr:iTodo[]){
+    this.userConTodo=this.userSvc.getUserConTodo(todoArr)
+  }
+
 }
