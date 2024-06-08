@@ -1,0 +1,15 @@
+<div class="row gy-3 m-3">
+  <div class="col-12">
+    <h1>Tutti gli utenti registrati al sito</h1>
+  </div>
+  <div class="col-12" *ngFor="let u of allUsers">
+    <div class="card">
+      <h5 class="card-header">{{ u.id }}</h5>
+      <div class="card-body">
+        <h3>{{ u.nome }}</h3>
+        <h3>{{ u.cognome }}</h3>
+        <p class="card-text">{{ u.email }}</p>
+      </div>
+    </div>
+  </div>
+</div>

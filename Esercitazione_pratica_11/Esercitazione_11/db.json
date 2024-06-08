@@ -1,0 +1,131 @@
+{
+  "users": [
+    {
+      "email": "nicola.catenacci@email.com",
+      "password": "$2a$10$QGK2ZCiK3xOoHyd1iGyHtuvTc4Itpca8VHSDePTDL/zpieGhJs6OO",
+      "nome": "Nicola",
+      "cognome": "Catenacci",
+      "id": 1
+    },
+    {
+      "email": "stefania.bina@email.com",
+      "password": "$2a$10$os5YDRgUJjpL79TzZKL8POTqAXos.yk/.hw7iOR3evaMRpMvt1/qq",
+      "nome": "Stefania",
+      "cognome": "Bina",
+      "id": 2
+    },
+    {
+      "email": "laura.catenacci@email.com",
+      "password": "$2a$10$rCIV/ZMhdX1f7JY/m92c4Oh5YYLl9HSMnlnHsg2VF6K1iizvmGZIu",
+      "nome": "Laura",
+      "cognome": "Catenacci",
+      "id": 3
+    }
+  ],
+  "movie": [
+    {
+      "filmId": 1,
+      "title": "Il re leone",
+      "releaseDate": "1994-06-24",
+      "plot": "Un giovane leone deve reclamare il trono dopo la morte di suo padre.",
+      "image": "https://www.cinefacts.it/foto/h!il_re_leone_locandina_poster_cinefacts__1_.jpg"
+    },
+    {
+      "filmId": 2,
+      "title": "Toy Story",
+      "releaseDate": "1995-11-22",
+      "plot": "Giocattoli che prendono vita e affrontano avventure quando non vengono osservati dagli umani.",
+      "image": "https://musicart.xboxlive.com/7/b8215100-0000-0000-0000-000000000002/504/image.jpg?w=1920&h=1080"
+    },
+    {
+      "filmId": 3,
+      "title": "Alla ricerca di nemo",
+      "releaseDate": "2003-05-30",
+      "plot": "Un pesce pagliaccio intraprende un viaggio per ritrovare suo figlio perduto.",
+      "image": "https://static.screenweek.it/movie/2661/poster/ita/big.jpg?1470937624"
+    },
+    {
+      "filmId": 4,
+      "title": "Frozen",
+      "releaseDate": "2013-11-27",
+      "plot": "Due sorelle affrontano una maledizione di ghiaccio per salvare il loro regno.",
+      "image": "https://static.posters.cz/image/750/poster/frozen-il-regno-di-ghiaccio-group-i20838.jpg"
+    },
+    {
+      "filmId": 5,
+      "title": "La città incantata",
+      "releaseDate": "2001-07-20",
+      "plot": "Una giovane ragazza rimane intrappolata in un mondo magico e deve trovare un modo per scappare.",
+      "image": "https://www.cinemadelsilenzio.it/images/film/poster/1061_big.jpg"
+    },
+    {
+      "filmId": 6,
+      "title": "Shrek",
+      "releaseDate": "2001-05-18",
+      "plot": "Un orco riluttante e il suo amico ciuchino devono salvare una principessa.",
+      "image": "https://m.media-amazon.com/images/I/81XYsdBaOQL._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+      "filmId": 7,
+      "title": "La bella e la bestia",
+      "releaseDate": "1991-11-22",
+      "plot": "Una giovane donna viene tenuta prigioniera da una bestia in un castello magico.",
+      "image": "https://image.tmdb.org/t/p/original/gd07oN6IwqsWyQH5QiBphhbqLhU.jpg"
+    },
+    {
+      "filmId": 8,
+      "title": "Vaiana",
+      "releaseDate": "2016-11-23",
+      "plot": "Una giovane navigatrice intraprende un viaggio per salvare il suo popolo.",
+      "image": "https://static.posters.cz/image/750/poster/oceania-magical-sea-i34088.jpg"
+    },
+    {
+      "filmId": 9,
+      "title": "Gli incredibili",
+      "releaseDate": "2004-11-05",
+      "plot": "Una famiglia di supereroi deve nascondere i propri poteri e vivere una vita normale.",
+      "image": "https://i.ebayimg.com/images/g/KfEAAOSwFNBiPwYp/s-l400.jpg"
+    },
+    {
+      "filmId": 10,
+      "title": "Up",
+      "releaseDate": "2009-05-29",
+      "plot": "Un anziano vedovo e un giovane scout volano verso l'avventura con una casa attaccata a palloncini.",
+      "image": "https://pad.mymovies.it/filmclub/2008/07/070/locandina.jpg"
+    }
+  ],
+  "favourite": [
+    {
+      "filmId": 4,
+      "title": "Frozen",
+      "releaseDate": "2013-11-27",
+      "plot": "Due sorelle affrontano una maledizione di ghiaccio per salvare il loro regno.",
+      "image": "https://static.posters.cz/image/750/poster/frozen-il-regno-di-ghiaccio-group-i20838.jpg",
+      "id": 1
+    },
+    {
+      "filmId": 8,
+      "title": "Vaiana",
+      "releaseDate": "2016-11-23",
+      "plot": "Una giovane navigatrice intraprende un viaggio per salvare il suo popolo.",
+      "image": "https://static.posters.cz/image/750/poster/oceania-magical-sea-i34088.jpg",
+      "id": 2
+    },
+    {
+      "filmId": 10,
+      "title": "Up",
+      "releaseDate": "2009-05-29",
+      "plot": "Un anziano vedovo e un giovane scout volano verso l'avventura con una casa attaccata a palloncini.",
+      "image": "https://pad.mymovies.it/filmclub/2008/07/070/locandina.jpg",
+      "id": 3
+    },
+    {
+      "filmId": 9,
+      "title": "Gli incredibili",
+      "releaseDate": "2004-11-05",
+      "plot": "Una famiglia di supereroi deve nascondere i propri poteri e vivere una vita normale.",
+      "image": "https://i.ebayimg.com/images/g/KfEAAOSwFNBiPwYp/s-l400.jpg",
+      "id": 4
+    }
+  ]
+}

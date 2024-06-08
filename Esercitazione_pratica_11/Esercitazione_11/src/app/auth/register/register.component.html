@@ -1,0 +1,47 @@
+<h1 class="text-center my-3">Registrati</h1>
+<div class="w-50 text-center mx-auto">
+  <form>
+    <div ngModelGroup="registerData" #registerData="ngModelGroup">
+      <input
+        type="text"
+        [(ngModel)]="newUser.nome"
+        name="nome"
+        placeholder="nome"
+        class="form-control mt-3"
+        required
+      />
+      <input
+        type="text"
+        [(ngModel)]="newUser.cognome"
+        name="cognome"
+        placeholder="cognome"
+        class="form-control mt-3"
+        required
+      />
+      <input
+        type="email"
+        [(ngModel)]="newUser.email"
+        name="email"
+        placeholder="email"
+        class="form-control mt-3"
+        required
+      />
+      <input
+        type="password"
+        [(ngModel)]="newUser.password"
+        name="password"
+        placeholder="password"
+        class="form-control mt-3"
+        required
+      />
+
+      <span *ngIf="registerData.invalid && registerData.touched" class="my-2"
+        >I dati inseriti non sono corretti</span
+      >
+    </div>
+
+    <button class="btn btn-primary mt-3" (click)="register()">
+      Registrati
+    </button>
+  </form>
+</div>
