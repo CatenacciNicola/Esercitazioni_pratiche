@@ -1,0 +1,7 @@
+Per il back-end lanciare "npm run db"
+
+
+I preferiti sono stati implementati ma sono universali, non associati all'utente che li ha scelti. Per questo non li ho mostrati nella pagina del profilo ma su una rotta separata.
+
+
+La grafica non è stata minimamente curata.
