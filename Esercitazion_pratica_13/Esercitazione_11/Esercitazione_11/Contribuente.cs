@@ -73,9 +73,9 @@ namespace Esercitazione_11
             Console.WriteLine($"Nato il: {DataNascita.ToString("dd/MM/yyyy")} ({Sesso})");
             Console.WriteLine($"Residente in: {ComuneResidenza}");
             Console.WriteLine($"Codice fiscale: {CodiceFiscale}");
-            //CONVERTO LE CIFRE NEL FORMATO SCELTO ("C", new CultureInfo("it-IT"))
-            Console.WriteLine($"Reddito dichiarato: {RedditoAnnuale.ToString("C", new CultureInfo("it-IT"))}");
-            Console.WriteLine($"IMPOSTA DA VERSARE: {CalcolaImposta().ToString("C", new CultureInfo("it-IT"))}");
+            //SCRIVO EURO A PAROLE PERCHE' IL TERMINALE NON STAMPA IL SIMBOLO
+            Console.WriteLine($"Reddito dichiarato: {RedditoAnnuale} euro");
+            Console.WriteLine($"IMPOSTA DA VERSARE: {CalcolaImposta()} euro");
         }
     }
 }
