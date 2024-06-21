@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace Esercitazione_11
+namespace Esercitazione_11 //Esercitazione pratica 13, mi sono accorta solo dopo aver caricato su git di aver sbagliato il conteggio
 {
     internal class Program
     {
