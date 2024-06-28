@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Esercitazione_14.Models.Prodotto>
+
+@{
+    ViewData["Title"] = "Lista Prodotti";
+}
+
+<h1>Lista Prodotti</h1>
+
+<p>
+    <a asp-action="Crea" class="btn btn-primary">Crea Nuovo Prodotto</a>
+</p>
+
+<div class="lista-prodotti">
+    @foreach (var prodotto in Model)
+    {
+        <div class="elemento-prodotto">
+            <img src="@prodotto.ImmagineCopertina" alt="@prodotto.Nome" />
+            <h2>@prodotto.Nome</h2>
+            <p>Prezzo: @prodotto.Prezzo €</p>
+            <a href="@Url.Action("Dettagli", "Prodotti", new { id = prodotto.Id })">Visualizza Dettagli</a>
+        </div>
+    }
+</div>
+
+<style>
+    .lista-prodotti {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .elemento-prodotto {
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        text-align: center;
+    }
+
+    .elemento-prodotto img {
+            max-width: 100%;
+            height: auto;
+    }
+</style>
