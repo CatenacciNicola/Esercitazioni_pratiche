@@ -1,0 +1,21 @@
+﻿@model Esercitazione_14.Models.Prodotto
+
+@{
+    ViewData["Title"] = Model.Nome;
+}
+<div class="container text-center">
+
+    <h1 class="my-3 text-success">@Model.Nome</h1>
+
+    <img class="mw-50" src="@Model.ImmagineCopertina" alt="@Model.Nome" />
+    <p class="fs-5 my-3">Prezzo: @Model.Prezzo €</p>
+    <p class="fs-4">@Model.Descrizione</p>
+    <div class="row g-2 my-3">
+        <div class="col-6">
+            <img class="mw-100 img-fluid" src="@Model.ImmagineAggiuntiva1" alt="Immagine Aggiuntiva 1" />
+        </div>
+        <div class="col-6">
+            <img class="mw-100 img-fluid" src="@Model.ImmagineAggiuntiva2" alt="Immagine Aggiuntiva 2" />
+        </div>
+    </div>
+</div>

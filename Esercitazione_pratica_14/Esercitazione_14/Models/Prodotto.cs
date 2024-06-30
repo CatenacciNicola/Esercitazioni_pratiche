@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Http;
+
 
 namespace Esercitazione_14.Models
 {
@@ -10,7 +12,6 @@ namespace Esercitazione_14.Models
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "Il prezzo è obbligatorio")]
-        [Range(0.01, 10000.00, ErrorMessage = "Il prezzo deve essere tra 0.01 e 10000.00")]
         public decimal Prezzo { get; set; }
 
         [Required(ErrorMessage = "La descrizione è obbligatoria")]
@@ -23,3 +24,4 @@ namespace Esercitazione_14.Models
         public string ImmagineAggiuntiva2 { get; set; }
     }
 }
+

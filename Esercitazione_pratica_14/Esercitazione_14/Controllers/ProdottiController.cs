@@ -1,5 +1,7 @@
-﻿using Esercitazione_14.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Esercitazione_14.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Esercitazione_14.Controllers
 {
@@ -7,8 +9,8 @@ namespace Esercitazione_14.Controllers
     {
         private static List<Prodotto> prodotti = new List<Prodotto>
         {
-            new Prodotto { Id = 1, Nome = "Scarpe A", Prezzo = 50.0m, Descrizione = "Descrizione delle Scarpe A", ImmagineCopertina = "cover1.jpg", ImmagineAggiuntiva1 = "additional1a.jpg", ImmagineAggiuntiva2 = "additional1b.jpg" },
-            new Prodotto { Id = 2, Nome = "Scarpe B", Prezzo = 75.0m, Descrizione = "Descrizione delle Scarpe B", ImmagineCopertina = "cover2.jpg", ImmagineAggiuntiva1 = "additional2a.jpg", ImmagineAggiuntiva2 = "additional2b.jpg" }
+            new Prodotto { Id = 1, Nome = "Scarpe A", Prezzo = 50.0m, Descrizione = "Descrizione delle Scarpe A", ImmagineCopertina = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-bdz0d4N_RanOpn2K_AGY6-Uyc26T0SZcAw&s", ImmagineAggiuntiva1 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-bdz0d4N_RanOpn2K_AGY6-Uyc26T0SZcAw&s", ImmagineAggiuntiva2 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-bdz0d4N_RanOpn2K_AGY6-Uyc26T0SZcAw&s" },
+            new Prodotto { Id = 2, Nome = "Scarpe B", Prezzo = 75.0m, Descrizione = "Descrizione delle Scarpe B", ImmagineCopertina = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-bdz0d4N_RanOpn2K_AGY6-Uyc26T0SZcAw&s", ImmagineAggiuntiva1 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-bdz0d4N_RanOpn2K_AGY6-Uyc26T0SZcAw&s", ImmagineAggiuntiva2 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-bdz0d4N_RanOpn2K_AGY6-Uyc26T0SZcAw&s" }
         };
 
         public IActionResult Index()

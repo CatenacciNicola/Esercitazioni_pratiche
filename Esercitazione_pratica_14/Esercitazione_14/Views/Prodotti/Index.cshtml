@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Esercitazione_14.Models.Prodotto>
+
+@{
+    ViewData["Title"] = "Lista Prodotti";
+}
+
+<div class="container text-center">
+
+<h1 class="text-success">Lista Prodotti</h1>
+
+    <div class="row gy-3">
+        @foreach (var prodotto in Model)
+        {
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 mb-3 bg-white shadow-lg">
+                    <img src="@prodotto.ImmagineCopertina" class="card-img-top" alt="@prodotto.Nome" />
+                    <div class="card-body text-center">
+                        <h5 class="card-title">@prodotto.Nome</h5>
+                        <p class="card-text">Prezzo: @prodotto.Prezzo €</p>
+                        <a href="@Url.Action("Dettagli", "Prodotti", new { id = prodotto.Id })">Visualizza Dettagli</a>
+                    </div> 
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
