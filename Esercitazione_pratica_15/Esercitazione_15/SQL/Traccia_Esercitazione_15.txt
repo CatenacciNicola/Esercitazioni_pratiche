@@ -1,0 +1,31 @@
+Esercitazione settimanale SQL Server Docente
+
+Un corpo di Polizia Municipale intende creare un database per la gestione delle contravvenzioni ed i relativi pagamenti. 
+Il database dovrà gestire un’anagrafica clienti, una entità per contenere i tipi di violazioni contestate ed un’altra per annotare ed archiviare il verbale.
+In virtù di quanto sopra creare le seguenti entità.
+
+ANAGRAFICA (idanagrafica, Cognome, Nome, Indirizzo, Città, CAP, Cod_Fisc);
+TIPO VIOLAZIONE (idviolazione, descrizione);
+VERBALE (idverbale, DataViolazione, IndirizzoViolazione, Nominativo_Agente, DataTrascrizioneVerbale, Importo, DecurtamentoPunti);
+
+1. Inserire in modo appropriato i campi per effettuare le relative relazioni,
+2. Gestire in modo appropriato i tipi di campi, chiavi primarie, chiavi esterne per ogni campo di ogni tabella,
+3. Creare le corrette relazioni alle tabelle,
+4. Popolare le tabelle manualmente con dati a piacimento.
+
+Successivamente, creare le seguenti query per interrogare il database (tutte le query devono essere salvate su un file txt): 
+
+1. Conteggio dei verbali trascritti,
+2. Conteggio dei verbali trascritti raggruppati per anagrafe,
+3. Conteggio dei verbali trascritti raggruppati per tipo di violazione,
+4. Totale dei punti decurtati per ogni anagrafe,
+5. Cognome, Nome, Data violazione, Indirizzo violazione, importo e punti decurtati per tutti gli anagrafici residenti a Palermo,
+6. Cognome, Nome, Indirizzo, Data violazione, importo e punti decurtati per le violazioni fatte tra il febbraio 2009 e luglio 2009,
+7. Totale degli importi per ogni anagrafico,
+8. Visualizzazione di tutti gli anagrafici residenti a Palermo,
+9. Query che visualizzi Data violazione, Importo e decurta mento punti relativi ad una certa data,
+10. Conteggio delle violazioni contestate raggruppate per Nominativo dell’agente di Polizia,
+11. Cognome, Nome, Indirizzo, Data violazione, Importo e punti decurtati per tutte le violazioni che superino il decurtamento di 5 punti,
+12. Cognome, Nome, Indirizzo, Data violazione, Importo e punti decurtati per tutte le violazioni che superino l’importo di 400 euro.
+
+I testi delle stored Procedure devono essere salvari in un file txt. 

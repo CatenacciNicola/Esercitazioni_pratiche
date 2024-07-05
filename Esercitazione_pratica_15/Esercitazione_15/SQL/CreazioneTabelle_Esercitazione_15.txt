@@ -1,0 +1,49 @@
+CREATE TABLE [dbo].[Anagrafica] (
+    [IdAnagrafica] INT           IDENTITY (1, 1) NOT NULL,
+    [Cognome]      NVARCHAR (30) NOT NULL,
+    [Nome]         NVARCHAR (30) NOT NULL,
+    [Indirizzo]    NVARCHAR (50) NOT NULL,
+    [Citta]        NVARCHAR (30) NOT NULL,
+    [Cap]          NVARCHAR (5)  NOT NULL,
+    [CodFiscale]   NVARCHAR (16) NOT NULL UNIQUE,
+    PRIMARY KEY CLUSTERED ([IdAnagrafica] ASC)
+);
+
+
+
+
+CREATE TABLE [dbo].[Violazione] (
+    [IdViolazione] INT           IDENTITY (1, 1) NOT NULL,
+    [Descrizione]  NVARCHAR (50) NOT NULL,
+    PRIMARY KEY CLUSTERED ([IdViolazione] ASC)
+);
+
+
+CREATE TABLE [dbo].[Verbale] (
+    [IdVerbale]               INT           IDENTITY (1, 1) NOT NULL,
+    [DataViolazione]          DATETIME2 (0) NOT NULL,
+    [IndirizzoViolazione]     NVARCHAR (50) NOT NULL,
+    [NominativoAgente]        NVARCHAR (30) NOT NULL,
+    [DataTrascrizioneVerbale] DATETIME2 (0) NOT NULL,
+    [Importo]                 MONEY         NOT NULL,
+    [DecurtamentoPunti]       INT           NOT NULL,
+    [IdAnagraficaFK]          INT           NOT NULL,
+    PRIMARY KEY CLUSTERED ([IdVerbale] ASC),
+    CONSTRAINT [FK_Verbale_ToAnagrafica] FOREIGN KEY ([IdAnagraficaFK]) REFERENCES [dbo].[Anagrafica] ([IdAnagrafica]),
+    CHECK ([Importo]>(0))
+);
+
+
+
+CREATE TABLE [dbo].[ViolazioniAVerbale] (
+    [IdViolazioniAVerbale] INT IDENTITY (1, 1) NOT NULL,
+    [IdVerbaleFK]          INT NOT NULL,
+    [IdViolazioneFK]       INT NOT NULL,
+    PRIMARY KEY CLUSTERED ([IdViolazioniAVerbale] ASC),
+    CONSTRAINT [FK_ViolazioniAVerbale_ToViolazioni] FOREIGN KEY ([IdViolazioneFK]) REFERENCES [dbo].[Violazione] ([IdViolazione]),
+    CONSTRAINT [FK_ViolazioniAVerbale_ToVerbale] FOREIGN KEY ([IdVerbaleFK]) REFERENCES [dbo].[Verbale] ([IdVerbale])
+);
+
+
+
+
