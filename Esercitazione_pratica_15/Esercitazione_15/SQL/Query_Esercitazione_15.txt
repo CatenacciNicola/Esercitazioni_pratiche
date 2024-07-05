@@ -84,4 +84,4 @@ WHERE V.DecurtamentoPunti>5
 SELECT A.Cognome,A.Nome,A.Indirizzo,V.DataViolazione,V.Importo,V.DecurtamentoPunti
 FROM Verbale AS V
 INNER JOIN Anagrafica AS A ON V.IdAnagraficaFK=A.IdAnagrafica
-WHERE V.Importo>100
+WHERE V.Importo>400
