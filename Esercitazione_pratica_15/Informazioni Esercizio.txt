@@ -1,0 +1,6 @@
+Tutti i file TXT sono contenuti nella cartella SQL.
+Per una questione di organizzazione ho preferito dividere i file
+In Traccia_Esercitazione_15 si trova il testo completo della traccia 
+In CreazioneTabelle_Esercitazione_15 ci sono i 4 CREATE TABLE (4 perché ho creato una relazione molti a molti tra le violazioni e i verbali)
+In Popolamento_Esercitazione_15 ci sono i 4 INSERT INTO, ho aggiornato i dati delle tabelle durante l'esercitazione quindi alcune SELECT potrebbero poi non dare risultati
+In Query_Esercitazione_15 vi sono le 12 SELECT con commentata la richiesta dei singoli esercizi
