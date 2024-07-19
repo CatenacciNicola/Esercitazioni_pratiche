@@ -1,0 +1,11 @@
+﻿@model ContravvenzioniWebApp.Models.Violazione
+
+<h1>Crea Nuova Violazione</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="Descrizione"></label>
+        <input asp-for="Descrizione" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Salva</button>
+</form>

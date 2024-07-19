@@ -1,0 +1,2 @@
+L'esercizio funzionava fino alla creazione del verbale, con il popolamento di tutte le tabelle.
+Quando ho iniziato ad inserire le select sono iniziati una serie di errori infiniti e il sito per qualche motivo non viene più nemmeno lanciato. Per cercare di risolvere i bug potrei aver fatto strafalcioni e ho copiato/incollato/cancellato pezzi di codice per capire da dove fosse nato il problema probabilmente peggiorando la situazione. Il lavoro è quello che è, non mi sono dedicata minimamente alle grafiche perché pensavo di fare alla fine.

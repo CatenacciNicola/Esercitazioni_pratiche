@@ -1,0 +1,21 @@
+﻿@model IEnumerable<ContravvenzioniWebApp.Models.Violazione>
+
+<h1>Violazioni</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Descrizione</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.IdViolazione</td>
+                <td>@item.Descrizione</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Violazione/Create" class="btn btn-primary">Aggiungi Nuova Violazione</a>

@@ -1,0 +1,54 @@
+﻿@model ContravvenzioniWebApp.Models.Verbale
+@{
+    ViewData["Title"] = "Crea Nuovo Verbale";
+}
+
+<h1>Crea Nuovo Verbale</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="DataViolazione"></label>
+        <input asp-for="DataViolazione" class="form-control" type="datetime-local" />
+    </div>
+    <div class="form-group">
+        <label asp-for="IndirizzoViolazione"></label>
+        <input asp-for="IndirizzoViolazione" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="NominativoAgente"></label>
+        <input asp-for="NominativoAgente" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="DataTrascrizioneVerbale"></label>
+        <input asp-for="DataTrascrizioneVerbale" class="form-control" type="datetime-local" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Importo"></label>
+        <input asp-for="Importo" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="DecurtamentoPunti"></label>
+        <input asp-for="DecurtamentoPunti" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Anagrafica</label>
+        <select asp-for="IdAnagraficaFK" class="form-control">
+            @foreach (var anagrafica in ViewBag.Anagrafiche)
+            {
+                <option value="@anagrafica.IdAnagrafica">@anagrafica.Cognome @anagrafica.Nome</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Violazioni</label>
+        @foreach (var violazione in ViewBag.Violazioni)
+        {
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" name="violazioniSelezionate" value="@violazione.IdViolazione" />
+                <label class="form-check-label">@violazione.Descrizione</label>
+            </div>
+        }
+    </div>
+    <button type="submit" class="btn btn-primary">Salva</button>
+</form>
+

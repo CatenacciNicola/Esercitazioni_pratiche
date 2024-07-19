@@ -1,0 +1,20 @@
+﻿@model IEnumerable<ContravvenzioniWebApp.Models.Verbale>
+
+<h1>Totale dei verbali trascritti raggruppati per trasgressore</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>IdAnagrafica</th>
+            <th>Totale Verbali</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.IdAnagraficaFK</td>
+                <td>@item.DecurtamentoPunti</td>
+            </tr>
+        }
+    </tbody>
+</table>
