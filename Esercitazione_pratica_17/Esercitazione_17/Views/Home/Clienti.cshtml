@@ -1,0 +1,74 @@
+﻿@model List<Esercitazione_17.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Clienti";
+}
+
+<h2>Clienti</h2>
+
+<form asp-action="AddCliente" method="post">
+    <div class="form-group">
+        <label for="CodiceFiscale">Codice Fiscale</label>
+        <input type="text" class="form-control" id="CodiceFiscale" name="CodiceFiscale" required />
+    </div>
+    <div class="form-group">
+        <label for="Cognome">Cognome</label>
+        <input type="text" class="form-control" id="Cognome" name="Cognome" required />
+    </div>
+    <div class="form-group">
+        <label for="Nome">Nome</label>
+        <input type="text" class="form-control" id="Nome" name="Nome" required />
+    </div>
+    <div class="form-group">
+        <label for="Citta">Città</label>
+        <input type="text" class="form-control" id="Citta" name="Citta" required />
+    </div>
+    <div class="form-group">
+        <label for="Provincia">Provincia</label>
+        <input type="text" class="form-control" id="Provincia" name="Provincia" required />
+    </div>
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="email" class="form-control" id="Email" name="Email" required />
+    </div>
+    <div class="form-group">
+        <label for="Telefono">Telefono</label>
+        <input type="text" class="form-control" id="Telefono" name="Telefono" required />
+    </div>
+    <div class="form-group">
+        <label for="Cellulare">Cellulare</label>
+        <input type="text" class="form-control" id="Cellulare" name="Cellulare" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Aggiungi Cliente</button>
+</form>
+
+<h3>Elenco Clienti</h3>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Codice Fiscale</th>
+            <th>Cognome</th>
+            <th>Nome</th>
+            <th>Città</th>
+            <th>Provincia</th>
+            <th>Email</th>
+            <th>Telefono</th>
+            <th>Cellulare</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cliente in Model)
+        {
+            <tr>
+                <td>@cliente.CodiceFiscale</td>
+                <td>@cliente.Cognome</td>
+                <td>@cliente.Nome</td>
+                <td>@cliente.Citta</td>
+                <td>@cliente.Provincia</td>
+                <td>@cliente.Email</td>
+                <td>@cliente.Telefono</td>
+                <td>@cliente.Cellulare</td>
+            </tr>
+        }
+    </tbody>
+</table>

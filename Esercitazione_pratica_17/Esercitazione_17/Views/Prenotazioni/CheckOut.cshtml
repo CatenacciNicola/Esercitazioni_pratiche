@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Check-Out";
+}
+
+<h2>Check-Out</h2>
+
+<div>
+    <p><strong>Nome Cliente:</strong> @ViewBag.Prenotazione.NomeCliente @ViewBag.Prenotazione.CognomeCliente</p>
+    <p><strong>Numero Stanza:</strong> @ViewBag.Prenotazione.NumeroCamera</p>
+    <p><strong>Descrizione Stanza:</strong> @ViewBag.Prenotazione.DescrizioneCamera</p>
+    <p><strong>Tipologia Stanza:</strong> @ViewBag.Prenotazione.TipologiaCamera</p>
+    <p><strong>Trattamento:</strong> @ViewBag.Prenotazione.DescrizioneTrattamento</p>
+    <p><strong>Periodo:</strong>Dal @ViewBag.Prenotazione.Dal.ToString("dd-MM-yyyy") al @ViewBag.Prenotazione.Al.ToString("dd-MM-yyyy")</p>
+</div>
+
+<h3>Servizi Aggiuntivi</h3>
+@if (ViewBag.ServiziPrenotazione != null && ViewBag.ServiziPrenotazione.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Descrizione</th>
+                <th>Quantità</th>
+                <th>Prezzo</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var servizio in ViewBag.ServiziPrenotazione)
+            {
+                <tr>
+                    <td>@servizio.DescrizioneServizio</td>
+                    <td>@servizio.Quantita</td>
+                    <td>@servizio.Prezzo €</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Nessun servizio aggiuntivo richiesto durante il soggiorno.</p>
+}
+
+<div>
+    <p><strong>Tariffa Applicata:</strong> @ViewBag.Prenotazione.TariffaApplicata €</p>
+    <p><strong>Totale Servizi Aggiuntivi:</strong> @ViewBag.TotaleServizi.ToString("0.00") €</p>
+    <p><strong>Caparra Confirmatoria:</strong> @ViewBag.Prenotazione.CaparraConfirmatoria €</p>
+    <p><strong>Importo da Saldare:</strong> @ViewBag.TotaleDaSaldare €</p>
+</div>

@@ -1,0 +1,38 @@
+﻿@model List<Esercitazione_17.Models.Prenotazione>
+
+@if (Model != null && Model.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome Cliente</th>
+                <th>Cognome Cliente</th>
+                <th>Numero Camera</th>
+                <th>Descrizione Camera</th>
+                <th>Tipologia Camera</th>
+                <th>Descrizione Trattamento</th>
+                <th>Dal</th>
+                <th>Al</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var prenotazione in Model)
+            {
+                <tr>
+                    <td>@prenotazione.NomeCliente</td>
+                    <td>@prenotazione.CognomeCliente</td>
+                    <td>@prenotazione.NumeroCamera</td>
+                    <td>@prenotazione.DescrizioneCamera</td>
+                    <td>@prenotazione.TipologiaCamera</td>
+                    <td>@prenotazione.DescrizioneTrattamento</td>
+                    <td>@prenotazione.Dal.ToString("dd-MM-yyyy")</td>
+                    <td>@prenotazione.Al.ToString("dd-MM-yyyy")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Nessuna prenotazione trovata per il codice fiscale specificato.</p>
+}

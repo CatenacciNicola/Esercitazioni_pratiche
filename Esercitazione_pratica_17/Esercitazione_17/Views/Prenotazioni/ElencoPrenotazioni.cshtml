@@ -1,0 +1,34 @@
+﻿@model List<Esercitazione_17.Models.Prenotazione>
+
+@{
+    ViewData["Title"] = "Elenco Prenotazioni";
+}
+
+<h2>Elenco Prenotazioni</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome Cliente</th>
+            <th>Numero Camera</th>
+            <th>Dal</th>
+            <th>Al</th>
+            <th>Azioni</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var prenotazione in Model)
+        {
+            <tr>
+                <td>@prenotazione.NomeCliente @prenotazione.CognomeCliente</td>
+                <td>@prenotazione.NumeroCamera</td>
+                <td>@prenotazione.Dal.ToString("dd-MM-yyyy")</td>
+                <td>@prenotazione.Al.ToString("dd-MM-yyyy")</td>
+                <td>
+                    <a class="btn btn-primary" asp-action="Servizi" asp-route-id="@prenotazione.Id">Dettagli e Servizi</a>
+                    <a class="btn btn-success" asp-action="CheckOut" asp-route-id="@prenotazione.Id">Check-Out</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
