@@ -57,7 +57,7 @@ CREATE TABLE [dbo].[Prenotazioni_Servizi] (
     [IdServizio]     INT NOT NULL,
     [Data] DATETIME NOT NULL, 
     [Quantita] INT NOT NULL, 
-    [Prezzo] NCHAR(10) NOT NULL, 
+    [Prezzo] DECIMAL(18, 2) NOT NULL, 
     PRIMARY KEY CLUSTERED ([Id] ASC),
     FOREIGN KEY ([IdPrenotazione]) REFERENCES [dbo].[Prenotazioni] ([Id]),
     FOREIGN KEY ([IdServizio]) REFERENCES [dbo].[Servizi] ([id])
