@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Esercitazione_18.Models.Order>
+
+@{
+    ViewData["Title"] = "Visualizza Ordini";
+    var ordiniDaEvadere = Model.Where(o => !o.Processed).ToList();
+    var ordiniEvasi = Model.Where(o => o.Processed).ToList();
+}
+
+<h2>Visualizza Ordini</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>Ordini da Evadere</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Indirizzo</th>
+                    <th>Note</th>
+                    <th>Data</th>
+                    <th>Prodotti</th>
+                    <th>Stato</th>
+                    <th>Azione</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var order in ordiniDaEvadere)
+                {
+                    <tr>
+                        <td>@order.Address</td>
+                        <td>@order.Notes</td>
+                        <td>@order.Date.ToString("dd/MM/yyyy")</td>
+                        <td>
+                            <ul>
+                                @foreach (var item in order.Products)
+                                {
+                                    <li>@item.Product.ProductName - Quantità: @item.Quantity</li>
+                                }
+                            </ul>
+                        </td>
+                        <td>
+                            <span class="text-danger">Ordine da evadere</span>
+                        </td>
+                        <td>
+                            <form asp-action="AggiornaProcessed" method="post">
+                                <input type="hidden" name="orderId" value="@order.OrderId" />
+                                <button type="submit" class="btn btn-primary">Segna come Processato</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="col-md-12">
+        <h3>Ordini Evasi</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Indirizzo</th>
+                    <th>Note</th>
+                    <th>Data</th>
+                    <th>Prodotti</th>
+                    <th>Stato</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var order in ordiniEvasi)
+                {
+                    <tr>
+                        <td>@order.Address</td>
+                        <td>@order.Notes</td>
+                        <td>@order.Date.ToString("dd/MM/yyyy")</td>
+                        <td>
+                            <ul>
+                                @foreach (var item in order.Products)
+                                {
+                                    <li>@item.Product.ProductName - Quantità: @item.Quantity</li>
+                                }
+                            </ul>
+                        </td>
+                        <td>
+                            <span class="text-success">Ordine evaso</span>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

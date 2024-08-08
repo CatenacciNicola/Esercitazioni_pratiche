@@ -1,0 +1,54 @@
+﻿@model Esercitazione_18.Models.Order
+
+@{
+    ViewData["Title"] = "Recapito Ordine";
+    decimal totaleOrdine = Model.Products.Sum(item => item.Product.Price * item.Quantity);
+    decimal speseConsegna = totaleOrdine < 20 ? 3.50m : 0;
+    decimal totaleFinale = totaleOrdine + speseConsegna;
+}
+
+<h2>Recapito Ordine</h2>
+
+<h3>Dati dell'Ordine</h3>
+<p><strong>Indirizzo:</strong> @Model.Address</p>
+<p><strong>Note:</strong> @Model.Notes</p>
+<p><strong>Data:</strong> @Model.Date.ToString("dd/MM/yyyy")</p>
+
+<h3>Prodotti Aggiunti</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Quantità</th>
+            <th>Prezzo Unitario</th>
+            <th>Prezzo Totale</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Products)
+        {
+            <tr>
+                <td>@item.Product.ProductName</td>
+                <td>
+                    <form asp-action="ModificaQuantita" method="post" style="display:inline-block;">
+                        <input type="hidden" name="orderId" value="@Model.OrderId" />
+                        <input type="hidden" name="orderItemId" value="@item.OrderItemId" />
+                        <input type="number" class="form-control" name="quantity" value="@item.Quantity" min="1" style="width: 80px; display:inline-block;" />
+                        <button type="submit" class="btn btn-secondary">Modifica</button>
+                    </form>
+                </td>
+                <td>@item.Product.Price.ToString("C")</td>
+                <td>@(item.Product.Price * item.Quantity) €</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h4>Totale Ordine: @totaleOrdine.ToString("C")</h4>
+<h4>Spese di Consegna: @speseConsegna.ToString("C")</h4>
+<h3>Totale Finale: @totaleFinale.ToString("C")</h3>
+
+<p>
+    <a class="btn btn-secondary" asp-action="SelezionaProdotti" asp-route-orderId="@Model.OrderId">Aggiungi altri prodotti</a>
+</p>

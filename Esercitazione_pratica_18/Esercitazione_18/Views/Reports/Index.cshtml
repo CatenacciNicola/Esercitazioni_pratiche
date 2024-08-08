@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Report Admin";
+}
+
+<h2>Report Admin</h2>
+
+<div>
+    <h3>Numero totale di ordini evasi</h3>
+    <button id="totalOrdersProcessedBtn" class="btn btn-primary">Ottieni Totale</button>
+    <p id="totalOrdersProcessedResult"></p>
+</div>
+
+<div>
+    <h3>Totale incassato per una determinata giornata</h3>
+    <input type="date" id="revenueDate" class="form-control" />
+    <button id="totalRevenueBtn" class="btn btn-primary">Ottieni Totale Incassato</button>
+    <p id="totalRevenueResult"></p>
+</div>
+
+@section Scripts {
+    <script>
+        document.getElementById('totalOrdersProcessedBtn').addEventListener('click', function () {
+            fetch('/Reports/GetTotalOrdersProcessed')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('totalOrdersProcessedResult').innerText = `Totale ordini evasi: ${data}`;
+                });
+        });
+
+        document.getElementById('totalRevenueBtn').addEventListener('click', function () {
+            const date = document.getElementById('revenueDate').value;
+            fetch(`/Reports/GetTotalRevenueByDate?date=${date}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('totalRevenueResult').innerText = `Totale incassato: ${data.toFixed(2)} €`;
+                });
+        });
+    </script>
+}

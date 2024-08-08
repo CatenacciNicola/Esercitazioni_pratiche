@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Esercitazione_18.Models.Product>
+
+@{
+    ViewData["Title"] = "Seleziona Prodotti";
+}
+
+<h2>Seleziona Prodotti</h2>
+
+<p>
+    <a class="btn btn-secondary" asp-action="RecapitoOrdine" asp-route-orderId="@ViewBag.OrderId">Recapito Ordine</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Prezzo</th>
+            <th>Immagine</th>
+            <th>Quantità</th>
+            <th>Azione</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            if (!((List<int>)ViewBag.ExistingProductIds).Contains(product.ProductId))
+            {
+                <tr>
+                    <td>@product.ProductName</td>
+                    <td>@product.Price</td>
+                    <td>
+                        <img src="~/images/@product.ProductImage" alt="@product.ProductName" width="100" />
+                    </td>
+                    <td>
+                        <input type="number" class="form-control" id="quantity-@product.ProductId" name="quantity" min="1" value="1" />
+                    </td>
+                    <td>
+                        <form asp-action="AggiungiProdotto" method="post">
+                            <input type="hidden" name="orderId" value="@ViewBag.OrderId" />
+                            <input type="hidden" name="productId" value="@product.ProductId" />
+                            <input type="hidden" id="form-quantity-@product.ProductId" name="quantity" value="1" />
+                            <button type="submit" class="btn btn-primary" onclick="document.getElementById('form-quantity-@product.ProductId').value = document.getElementById('quantity-@product.ProductId').value;">Aggiungi all'ordine</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<form asp-action="EliminaOrdine" method="post">
+    <input type="hidden" name="orderId" value="@ViewBag.OrderId" />
+    <button type="submit" class="btn btn-danger">Elimina Ordine</button>
+</form>
